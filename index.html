@@ -562,9 +562,21 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 60px;
+        }
+
+        @media (max-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .project-card {
@@ -589,6 +601,15 @@
             justify-content: center;
             font-size: 3rem;
             color: white;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: white;
+            padding: 20px;
         }
 
         .project-content {
@@ -1090,6 +1111,232 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Research Section */
+        .research {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.3), rgba(10, 10, 10, 0.9));
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 1200px) {
+            .research-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .research-card {
+            background: rgba(26, 26, 46, 0.6);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
+        }
+
+        .research-year {
+            color: #00d4ff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .research-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .research-description {
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .publication-item {
+            background: rgba(26, 26, 46, 0.6);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(10px);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .publication-venue {
+            color: #00d4ff;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .publication-status {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Professional Training Section */
+        .training-section {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(10, 10, 10, 0.95));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .training-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4ff, #0099cc, #00d4ff);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .training-card {
+            background: rgba(26, 26, 46, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .training-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .training-card:hover::before {
+            left: 100%;
+        }
+
+        .training-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .training-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #0a0a0a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .training-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .training-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .training-institution {
+            color: #00d4ff;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .training-date {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        .training-description {
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .training-description ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .training-description li {
+            margin-bottom: 10px;
+            color: #b0b0b0;
+        }
+
+        .contribution-item {
+            background: rgba(26, 26, 46, 0.6);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contribution-item:hover {
+            transform: translateX(10px);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .contribution-org {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+
+        .contribution-desc {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
     </style>
 </head>
 
@@ -1104,6 +1351,8 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#training">Training</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -1154,13 +1403,11 @@
         </div>
 
         <div class="hero-content">
-            <div class="hero-subtitle mystical-subtitle">The Data Whisperer & Neural Architect</div>
+            <div class="hero-subtitle mystical-subtitle">Senior AI / Machine Learning Engineer — Applied AI Researcher</div>
             <h1 class="hero-title">I am <span class="hero-name transformer-text">Dipesh Shome</span></h1>
             <p class="hero-description">
-                Where <span class="magical-emphasis">ancient wisdom</span> meets <span class="neural-metaphor">quantum
-                    intelligence</span>,
-                I weave the <span class="magical-emphasis">threads of data</span> into the <span
-                    class="neural-metaphor">fabric of tomorrow</span>.
+                <span class="magical-emphasis">Perth, Australia</span> • Specialized in LLMs, Agentic AI, RAG Systems, and Multimodal Learning
+                <br>Translating applied research into scalable commercial solutions with <span class="neural-metaphor">5-6x performance improvements</span>
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">Explore the Journey</a>
@@ -1212,50 +1459,40 @@
             <div class="about-content">
                 <div class="about-text scroll-animation">
                     <div class="story-text">
-                        In the realm where <span class="neural-metaphor">binary rivers</span> flow through <span
-                            class="magical-emphasis">quantum forests</span>,
-                        I have spent three winters and summers as a <span class="transformer-text">Guardian of
-                            Intelligence</span>. My journey began
-                        when I first heard the <span class="magical-emphasis">whispers of data</span> calling from
-                        beyond the veil of traditional computing.
+                        Senior AI / Machine Learning Engineer with <span class="magical-emphasis">3+ years</span> of experience architecting and deploying 
+                        <span class="transformer-text">production-grade AI platforms</span> across healthcare, conversational AI, multimodal systems, and intelligent automation.
+                        Specialized in <span class="neural-metaphor">LLMs, agentic AI, RAG systems, and multimodal learning</span>.
                     </div>
                     <div class="story-text">
-                        Like an <span class="neural-metaphor">alchemist of the digital age</span>, I transmute raw
-                        information into
-                        <span class="magical-emphasis">golden insights</span>, weaving together the ancient arts of
-                        mathematics with the
-                        <span class="transformer-text">modern sorcery</span> of neural networks. Each algorithm I craft
-                        is a
-                        <span class="magical-emphasis">living spell</span>, breathing intelligence into the mechanical
-                        world.
+                        Proven track record of translating <span class="magical-emphasis">applied research</span> into scalable commercial solutions, 
+                        achieving <span class="transformer-text">5-6x system performance improvements</span>. Strong blend of deep engineering, 
+                        applied research, and technical leadership. Currently seeking <span class="neural-metaphor">senior or staff AI engineering 
+                        and applied research roles in Australia</span>.
                     </div>
                     <div class="story-text">
-                        My sanctum lies at the crossroads of <span class="neural-metaphor">human intuition</span> and
-                        <span class="transformer-text">machine precision</span>, where I forge <span
-                            class="magical-emphasis">cognitive bridges</span>
-                        that span the chasm between what is known and what is possible. In the healthcare realms,
-                        finance kingdoms,
-                        and infrastructure dominions, my <span class="neural-metaphor">AI constructs</span> have
-                        awakened dormant potentials.
+                        My expertise spans the entire AI lifecycle—from <span class="magical-emphasis">research and innovation</span> to 
+                        <span class="transformer-text">production deployment</span>, with particular strength in healthcare AI, 
+                        multimodal systems, and autonomous reasoning architectures. I've architected systems supporting 
+                        <span class="neural-metaphor">1000+ concurrent users</span> with enterprise-grade security and observability.
                     </div>
                 </div>
 
                 <div class="about-stats scroll-animation">
                     <div class="stat-item">
                         <div class="stat-number">3+</div>
-                        <div class="stat-label">Seasons of Mastery</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Intelligent Creations</div>
+                        <div class="stat-number">5-6x</div>
+                        <div class="stat-label">Performance Gains</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">75%</div>
-                        <div class="stat-label">Prophecy Accuracy</div>
+                        <div class="stat-number">80%</div>
+                        <div class="stat-label">Latency Reduction</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">50%</div>
-                        <div class="stat-label">Reality Enhancement</div>
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Concurrent Users</div>
                     </div>
                 </div>
             </div>
@@ -1284,31 +1521,32 @@
                         unknown to mortal machines.
                     </p>
                     <div class="skill-tags">
-                        <span class="skill-tag">LangChain </span>
-                        <span class="skill-tag">OpenAI </span>
-                        <span class="skill-tag">Groq </span>
-                        <span class="skill-tag">Vector Databases</span>
-                        <span class="skill-tag">APIs</span>
+                        <span class="skill-tag">LLMs (GPT, BERT, ViT)</span>
+                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">Multimodal AI</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">OCR</span>
+                        <span class="skill-tag">Deep Learning</span>
                     </div>
                 </div>
 
                 <div class="skill-card scroll-animation">
-                    <div class="skill-icon">🌌</div>
-                    <h3 class="skill-title"><span class="transformer-text">The Quantum Learning Arts (Machine
-                            Learning)</span></h3>
+                    <div class="skill-icon">🤖</div>
+                    <h3 class="skill-title"><span class="transformer-text">Agentic AI & Multi-Agent Systems</span></h3>
                     <p class="skill-description">
-                        Weaver of <span class="neural-metaphor">probability clouds</span> and <span
-                            class="magical-emphasis">pattern prophecies</span>,
-                        I channel the cosmic forces of PyTorch and TensorFlow to birth <span
-                            class="transformer-text">artificial consciousness</span>
-                        from the void of raw data.
+                        Architect of <span class="neural-metaphor">autonomous reasoning pipelines</span> and <span
+                            class="magical-emphasis">multi-agent orchestration</span>,
+                        I design intelligent systems that collaborate and reason through complex workflows using 
+                        <span class="transformer-text">CrewAI and LangGraph</span>.
                     </p>
                     <div class="skill-tags">
-                        <span class="skill-tag">PyTorch Mastery</span>
-                        <span class="skill-tag">TensorFlow Magic</span>
-                        <span class="skill-tag">Keras Enchantment</span>
-                        <span class="skill-tag">MLOps Rituals</span>
-                        <span class="skill-tag">EDA, Transformation, Cleaning, Pattern Recognotion</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">CrewAI</span>
+                        <span class="skill-tag">Multi-Agent Systems</span>
+                        <span class="skill-tag">Autonomous Reasoning</span>
                     </div>
                 </div>
 
@@ -1343,10 +1581,11 @@
                         the right incantation.
                     </p>
                     <div class="skill-tags">
-                        <span class="skill-tag">MongoDB Scrolls</span>
-                        <span class="skill-tag">Pinecone Crystals</span>
-                        <span class="skill-tag">AWS Heavens</span>
-                        <span class="skill-tag">PostgreSQL Temples</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">Qdrant</span>
+                        <span class="skill-tag">Pinecone</span>
                     </div>
                 </div>
 
@@ -1361,28 +1600,35 @@
                         in the physical realm.
                     </p>
                     <div class="skill-tags">
-                        <span class="skill-tag">FastAPI Lightning</span>
-                        <span class="skill-tag">Flask Elixirs</span>
-                        <span class="skill-tag">Docker Vessels</span>
-                        <span class="skill-tag">Git Time Streams</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">REST</span>
+                        <span class="skill-tag">gRPC</span>
+                        <span class="skill-tag">AsyncIO</span>
+                        <span class="skill-tag">Microservices</span>
                     </div>
                 </div>
 
                 <div class="skill-card scroll-animation">
-                    <div class="skill-icon">🌊</div>
-                    <h3 class="skill-title"><span class="transformer-text">The Stream Shepherd (Data Engineering)</span>
-                    </h3>
+                    <div class="skill-icon">☁️</div>
+                    <h3 class="skill-title"><span class="transformer-text">Cloud & MLOps</span></h3>
                     <p class="skill-description">
-                        Master of the <span class="neural-metaphor">flowing data rivers</span>, I conduct <span
-                            class="magical-emphasis">information symphonies</span>
-                        through Apache Spark storms and Kafka currents, orchestrating the <span
-                            class="transformer-text">dance of real-time wisdom</span>.
+                        Master of <span class="neural-metaphor">cloud-native architectures</span> and <span
+                            class="magical-emphasis">production-grade observability</span>,
+                        I deploy scalable AI systems with <span class="transformer-text">distributed caching, load balancing, 
+                        and event-driven architectures</span>.
                     </p>
                     <div class="skill-tags">
-                        <span class="skill-tag">Apache Spark Thunder</span>
-                        <span class="skill-tag">Kafka Currents</span>
-                        <span class="skill-tag">Airflow Winds</span>
-                        <span class="skill-tag">Redis Lightning</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Langfuse</span>
+                        <span class="skill-tag">Prometheus</span>
+                        <span class="skill-tag">Grafana</span>
                     </div>
                 </div>
             </div>
@@ -1401,15 +1647,19 @@
                 <div class="timeline-item scroll-animation">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">January 2025 - Present</div>
-                        <h3 class="timeline-title">Senior AI Engineer</h3>
-                        <div class="timeline-company">LifePlus Bangladesh Limited</div>
+                        <div class="timeline-date">Jul 2024 – Present</div>
+                        <h3 class="timeline-title">Artificial Intelligence Engineer</h3>
+                        <div class="timeline-company">Tulip-Tech, United Kingdom</div>
                         <p class="timeline-description">
-                            Leading development of AI-driven customer service platforms, multilingual medical AI
-                            consultation systems,
-                            and custom LLM "LabaidGPT" for medical applications. Architected comprehensive solutions
-                            using Flask,
-                            LangChain, and advanced NLP technologies.
+                            • Architected omnipresent multimodal AI agent platforms enabling real-time voice, text, and document-based healthcare interactions.<br>
+                            • Designed autonomous multi-agent reasoning pipelines using CrewAI to support clinical workflows and decision-making.<br>
+                            • Optimised RAG pipelines, reducing response latency from 25s to 4-5s (80% improvement).<br>
+                            • Built gRPC-based microservices achieving sub-100ms inter-service communication.<br>
+                            • Developed secure backend APIs using FastAPI, JWT, RBAC, and audit logging.<br>
+                            • Engineered event-driven architectures using AWS SQS for real-time system synchronisation.<br>
+                            • Established production-grade observability using Langfuse, Prometheus, and Grafana.<br>
+                            • Designed scalable cloud-native architectures using async processing, Redis caching, distributed rate limiting, and vector caching.<br>
+                            • Built intelligent medical and financial document pipelines using OCR + LLM parsing.
                         </p>
                     </div>
                 </div>
@@ -1417,15 +1667,17 @@
                 <div class="timeline-item scroll-animation">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">February 2022 - January 2025</div>
-                        <h3 class="timeline-title">AI Engineer</h3>
-                        <div class="timeline-company">Tulip-Tech Limited</div>
+                        <div class="timeline-date">Feb 2022 – 2024</div>
+                        <h3 class="timeline-title">Lead AI/ML Engineer & Co-Founder</h3>
+                        <div class="timeline-company">LifePlus Bangladesh Ltd</div>
                         <p class="timeline-description">
-                            Developed sophisticated AI voice chatbot systems using LangChain with multi-agent
-                            architecture for
-                            UK-based care homes. Implemented Direct Preference Optimization (DPO) techniques and built
-                            secure
-                            FastAPI backends with comprehensive security measures.
+                            • Founded and led an AI-driven healthcare technology company delivering intelligent platforms for hospitals and diagnostic centres.<br>
+                            • Architected end-to-end healthcare AI systems integrating clinical NLP, LLM-powered assistants, multimodal AI, and analytics platforms.<br>
+                            • Designed AI-based patient triage, clinical summarisation, and appointment automation, improving hospital operational efficiency by 40%+.<br>
+                            • Built disease classification pipelines and predictive analytics systems using deep learning and transformer models.<br>
+                            • Developed medical and financial document automation platforms using OCR + NLP + LLMs for billing, insurance, prescriptions, and EMR ingestion.<br>
+                            • Designed enterprise data warehouses and ETL pipelines, reducing reporting latency by 50% and query cost by 40%.<br>
+                            • Led cross-functional teams across engineering, clinicians, and business stakeholders.
                         </p>
                     </div>
                 </div>
@@ -1433,29 +1685,11 @@
                 <div class="timeline-item scroll-animation">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">February 2022 - July 2024</div>
-                        <h3 class="timeline-title">Machine Learning Engineer</h3>
-                        <div class="timeline-company">Dot BD Solutions Limited</div>
+                        <div class="timeline-date">2016 – 2021</div>
+                        <h3 class="timeline-title">BSc in Computer Science & Engineering</h3>
+                        <div class="timeline-company">Ahsanullah University of Science and Technology</div>
                         <p class="timeline-description">
-                            Developed and deployed predictive models including deep learning-based disease
-                            classification systems
-                            and NLP-driven recommendation systems. Built interactive Power BI dashboards that reduced
-                            report
-                            preparation time by 50%.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item scroll-animation">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">December 2016 - June 2021</div>
-                        <h3 class="timeline-title">Bachelor of Science in CSE</h3>
-                        <div class="timeline-company">Ahsanullah University of Science & Technology</div>
-                        <p class="timeline-description">
-                            Specialized in Artificial Intelligence & Data Science with CGPA 3.40/4.00.
-                            Completed multiple capstone projects in AI and developed strong foundation in
-                            mathematical and statistical concepts.
+                            CGPA: 3.40 / 4.00
                         </p>
                     </div>
                 </div>
@@ -1473,45 +1707,26 @@
 
             <div class="projects-grid">
                 <div class="project-card scroll-animation">
-                    <div class="project-image">🤖</div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Customer Service Platform</h3>
-                        <p class="project-description">
-                            Comprehensive enterprise-grade platform with intelligent query classification across 19+
-                            intent categories,
-                            dual-database architecture, and embeddable JavaScript SDK for seamless integration.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Pinecone</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Project →</a>
-                            <a href="#" class="project-link">GitHub →</a>
-                        </div>
+                    <div class="project-image">
+                        <img src="2.jpeg" alt="EMPATHIKA By CAREAPPS Logo">
                     </div>
-                </div>
-
-                <div class="project-card scroll-animation">
-                    <div class="project-image">🏥</div>
                     <div class="project-content">
-                        <h3 class="project-title">Medical AI Consultation System</h3>
+                        <h3 class="project-title">Omnipresent Multimodal Healthcare AI Agent Platform</h3>
                         <p class="project-description">
-                            Multilingual platform featuring specialized cancer risk assessment with transparent AI
-                            reasoning,
-                            real-time voice/vision analysis, and HIPAA-compliant security measures.
+                            Designed and deployed a real-time multimodal conversational AI system supporting voice, text, and document understanding. 
+                            Integrated LLM-based reasoning, RAG pipelines, and multi-agent orchestration. 
+                            Achieved sub-5s response latency and supported 1000+ concurrent users with enterprise-grade security and observability.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Groq API</span>
-                            <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Multimodal AI</span>
+                            <span class="tech-tag">CrewAI</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">gRPC</span>
+                            <span class="tech-tag">AWS</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">View Project →</a>
-                            <a href="#" class="project-link">GitHub →</a>
                         </div>
                     </div>
                 </div>
@@ -1519,21 +1734,62 @@
                 <div class="project-card scroll-animation">
                     <div class="project-image">🧠</div>
                     <div class="project-content">
-                        <h3 class="project-title">LabaidGPT - Custom Medical LLM</h3>
+                        <h3 class="project-title">Medical Text Classification using Transformers (2025)</h3>
                         <p class="project-description">
-                            Specialized Large Language Model developed from scratch for medical applications, featuring
-                            custom
-                            tokenization, advanced training methodologies, and medical expert validation.
+                            Built SciBERT-based NLP pipelines on 49,473 clinical records across 11 specialties. 
+                            Achieved 99.80% accuracy, solving extreme class imbalance (441:1). 
+                            Published research demonstrating state-of-the-art performance in medical text classification.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Custom LLM</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">RLHF</span>
-                            <span class="tech-tag">Medical Data</span>
+                            <span class="tech-tag">SciBERT</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Clinical Data</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Research Paper →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card scroll-animation">
+                    <div class="project-image">
+                        <img src="LABAID AI LOGO (1).svg" alt="LABAID AI Logo">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Multimodal AI Consultation System (Healthcare) (2024-2025)</h3>
+                        <p class="project-description">
+                            Developed multilingual AI systems integrating text, speech, and vision for automated clinical triage. 
+                            Features real-time multimodal understanding with transparent AI reasoning and enterprise-grade security.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Multimodal AI</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Speech Processing</span>
+                            <span class="tech-tag">Clinical Triage</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">View Project →</a>
-                            <a href="#" class="project-link">Research Paper →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card scroll-animation">
+                    <div class="project-image">🧬</div>
+                    <div class="project-content">
+                        <h3 class="project-title">EEG Signal Processing & Brain-Computer Interface Systems (2022-2023)</h3>
+                        <p class="project-description">
+                            Designed ensemble ML models achieving 10%+ performance gains in brain-computer interface applications. 
+                            Advanced signal processing and feature extraction techniques for neural data analysis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Signal Processing</span>
+                            <span class="tech-tag">Ensemble ML</span>
+                            <span class="tech-tag">BCI</span>
+                            <span class="tech-tag">Neural Data</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project →</a>
                         </div>
                     </div>
                 </div>
@@ -1541,59 +1797,34 @@
                 <div class="project-card scroll-animation">
                     <div class="project-image">🛣️</div>
                     <div class="project-content">
-                        <h3 class="project-title">Road Quality Assessment AI</h3>
+                        <h3 class="project-title">Road Quality Measurement from Satellite Imagery</h3>
                         <p class="project-description">
-                            Revolutionary computer vision system using satellite imagery for automated road quality
-                            measurement,
-                            achieving 75% accuracy and published in IEEE IGARSS 2022.
+                            Revolutionary computer vision system using satellite imagery for automated road quality measurement. 
+                            Published in IEEE IGARSS 2022 with DOI: 10.1109/IGARSS46834.2022.98. 
+                            Demonstrated practical application of deep learning for infrastructure assessment.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">TensorFlow</span>
                             <span class="tech-tag">Satellite Imagery</span>
                             <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">IEEE Publication</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Project →</a>
-                            <a href="#" class="project-link">IEEE Paper →</a>
+                            <a href="https://doi.org/10.1109/IGARSS46834.2022.98" class="project-link">IEEE Paper →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card scroll-animation">
-                    <div class="project-image">💰</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Financial AI Assistant</h3>
-                        <p class="project-description">
-                            Proof-of-concept Financial AI Assistant platform capable of integrating with banking systems
-                            to assist
-                            users in investment planning, purchase decisions, balance inquiries, and personalized
-                            financial strategy
-                            recommendations using LLMs and prompt chaining.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">LLMs</span>
-                            <span class="tech-tag">Prompt Chaining</span>
-                            <span class="tech-tag">Banking APIs</span>
-                            <span class="tech-tag">Financial Planning</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Project →</a>
-                            <a href="#" class="project-link">GitHub →</a>
-                        </div>
+                    <div class="project-image">
+                        <img src="ChatGPT Image Jan 30, 2026, 11_05_19 AM.png" alt="Industry-Specific AI Chatbot">
                     </div>
-                </div>
-
-                <div class="project-card scroll-animation">
-                    <div class="project-image">🏭</div>
                     <div class="project-content">
                         <h3 class="project-title">Industry-Specific AI Chatbot</h3>
                         <p class="project-description">
                             Intelligent conversational AI solution tailored for specific industry domains, featuring
-                            custom knowledge
-                            bases, domain-specific NLP models, and adaptive learning capabilities to handle specialized
-                            queries
-                            and technical terminology.
+                            custom knowledge bases, domain-specific NLP models, and adaptive learning capabilities to handle specialized
+                            queries and technical terminology.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Domain NLP</span>
@@ -1605,6 +1836,108 @@
                             <a href="#" class="project-link">View Project →</a>
                             <a href="#" class="project-link">GitHub →</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Innovation Section -->
+    <section id="research" class="section research">
+        <div class="container">
+            <h2 class="section-title scroll-animation">Chapter V: Research & Innovation</h2>
+            <p class="section-subtitle scroll-animation">
+                Advancing the frontiers of AI through applied research and innovation
+            </p>
+
+            <div class="research-grid">
+                <div class="research-card scroll-animation">
+                    <div class="research-year">2025</div>
+                    <h3 class="research-title">Medical Text Classification using Transformers</h3>
+                    <p class="research-description">
+                        Built SciBERT-based NLP pipelines on 49,473 clinical records across 11 specialties. 
+                        Achieved 99.80% accuracy, solving extreme class imbalance (441:1). 
+                        This research demonstrates state-of-the-art performance in medical text classification.
+                    </p>
+                        </div>
+
+                <div class="research-card scroll-animation">
+                    <div class="research-year">2024-2025</div>
+                    <h3 class="research-title">Multimodal AI Consultation System (Healthcare)</h3>
+                    <p class="research-description">
+                        Developed multilingual AI systems integrating text, speech, and vision for automated clinical triage. 
+                        Features real-time multimodal understanding with transparent AI reasoning and enterprise-grade security.
+                    </p>
+                        </div>
+
+                <div class="research-card scroll-animation">
+                    <div class="research-year">2022-2023</div>
+                    <h3 class="research-title">EEG Signal Processing & Brain-Computer Interface Systems</h3>
+                    <p class="research-description">
+                        Designed ensemble ML models achieving 10%+ performance gains in brain-computer interface applications. 
+                        Advanced signal processing and feature extraction techniques for neural data analysis.
+                    </p>
+                    </div>
+                </div>
+
+            <h3 class="section-title scroll-animation" style="font-size: 2rem; margin-top: 80px; margin-bottom: 40px;">Publications</h3>
+            <div class="scroll-animation">
+                <div class="publication-item">
+                    <div class="publication-title">Automated Medical Text Classification Using Advanced Deep Learning</div>
+                    <div class="publication-venue">IICT 2025</div>
+                    <div class="publication-status">Under Review</div>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-title">Road Quality Measurement from Satellite Imagery</div>
+                    <div class="publication-venue">IEEE IGARSS 2022</div>
+                    <div class="publication-status">DOI: 10.1109/IGARSS46834.2022.98</div>
+                </div>
+            </div>
+
+
+            <h3 class="section-title scroll-animation" style="font-size: 2rem; margin-top: 80px; margin-bottom: 40px;">Government & National Contributions</h3>
+            <div class="scroll-animation">
+                <div class="contribution-item">
+                    <div class="contribution-org">Bangladesh Technical Education Board (BTEB)</div>
+                    <div class="contribution-desc">National Operating System curriculum modernisation</div>
+                </div>
+                <div class="contribution-item">
+                    <div class="contribution-org">National Skills Development Authority (NSDA)</div>
+                    <div class="contribution-desc">National Artificial Intelligence and Mixed Reality curriculum and assessment framework development</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Training Section -->
+    <section id="training" class="section training-section">
+        <div class="container">
+            <h2 class="section-title chapter-title scroll-animation"><span class="transformer-text">Chapter VI: Professional Excellence</span></h2>
+            <p class="section-subtitle scroll-animation mystical-subtitle">
+                Distinguished training and certification from world-renowned institutions
+            </p>
+
+            <div class="scroll-animation">
+                <div class="training-card">
+                    <div class="training-badge">Top 30 Nationwide</div>
+                    <div class="training-header">
+                        <div>
+                            <h3 class="training-title">Training of Trainers (TOT) - Advanced Machine Learning & Deep Learning</h3>
+                            <div class="training-institution">Indian Institute of Technology (IIT), Kharagpur, India</div>
+                            <div class="training-date">Jun 2022 - Jan 2023</div>
+                        </div>
+                    </div>
+                    <div class="training-description">
+                        <p style="font-size: 1.1rem; margin-bottom: 20px; color: #00d4ff; font-weight: 600;">
+                            Selected among top 30 professionals nationwide. Completed an intensive 7-month international fellowship focused on:
+                        </p>
+                        <ul>
+                            <li>Advanced Machine Learning, Deep Learning, NLP, Reinforcement Learning, and Computer Vision</li>
+                            <li>Hands-on training on deep neural architectures, transformer models, multimodal learning, and large-scale ML system design</li>
+                            <li>Applied research projects on healthcare NLP, medical document intelligence, and data-centric AI methodologies</li>
+                            <li>Pedagogical and technical training to design, deliver, and evaluate industry-aligned AI/ML curriculum</li>
+                            <li>Collaboration with senior IIT faculty and industry mentors on real-world AI system deployment challenges</li>
+                        </ul>
                     </div>
                 </div>
             </div>
